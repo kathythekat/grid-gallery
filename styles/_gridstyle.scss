@@ -1,0 +1,16 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.square {
+    border: solid black 1px;
+    box-shadow: 4px 4px 4px #827c7c;
+    border-radius: 10px;
+    width: 15rem;
+    height: 16rem;
+}
+

@@ -1,0 +1,29 @@
+$main-font: 'Poppins', sans-serif;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-family: $main-font;
+
+    h1 {
+        text-align: center;
+    }
+}
+
+@mixin center-position {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin image-position {
+    display:block;
+    height:32rem;
+    width:24rem;
+    overflow: hidden;
+}

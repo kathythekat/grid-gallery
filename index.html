@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <title>Gallery</title>
+</head>
+<body>
+    <h1>My Life in Squares</h1>
+
+    <!--Grid Gallery-->
+    <div class="grid-container">
+            <img class="square" id="square-1" src="images/img-1.JPG"> 
+            <img class="square" id="square-2" src="images/img-2.jpg"> 
+            <img class="square" id="square-3" src ="images/img-3.jpg">
+            <img class="square" id="square-4" src="images/img-4.jpg">
+        </div>
+    </div>
+
+
+    <!--Carousel Modal-->
+    <div class="carousel-modal" id="carouselModal">
+        <div class="carousel-wrap">
+            <div class="carousel">
+                <button class="carousel-button previous" id="previous"><</button>
+                <div class="carousel-images">
+                    <img src="images/img-1.jpg"> 
+                    <img src="images/img-2.jpg"> 
+                    <img src="images/img-3.jpg">
+                    <img src="images/img-4.jpg">
+                </div>
+                <button class="carousel-button next" id="next">></button>
+            </div>
+        </div>
+    </div>
+   
+</body>
+<script src="script.js"></script>
+</html>

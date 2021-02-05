@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+}
+body h1 {
+  text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.square {
+  border: solid black 1px;
+  box-shadow: 4px 4px 4px #827c7c;
+  border-radius: 10px;
+  width: 15rem;
+  height: 16rem;
+}
+
+.carousel-modal {
+  display: none;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.443);
+}
+
+.carousel-modal--open {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel {
+  align-items: center;
+  display: flex;
+  margin: 1em auto;
+  overflow: hidden;
+  position: relative;
+  width: 480px;
+}
+.carousel-images {
+  display: flex;
+}
+.carousel .animate {
+  animation: fade-in 1s;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.carousel img {
+  border-radius: 8px;
+  height: 36rem;
+  width: 480px;
+}
+.carousel button {
+  background-color: #2a2a2a96;
+  font-size: 24px;
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+  height: 2.5rem;
+  width: 2.5rem;
+  color: white;
+  position: absolute;
+  /* transition: opacity .25s; */
+  z-index: 1;
+}
+.carousel button.previous {
+  left: 4px;
+}
+.carousel button.next {
+  right: 4px;
+}
+.carousel button:hover {
+  opacity: 0.6;
+}
+
+/*# sourceMappingURL=style.css.map */
