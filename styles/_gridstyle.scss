@@ -4,6 +4,9 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    @media screen and (max-width:800px) {
+        grid-template-columns: repeat(2,auto);
+    }
 }
 
 .square {
@@ -17,7 +20,10 @@
     }
     &:focus {
         outline: none;
-        border: solid white 3px;
+    }
+    @media screen and (max-width:800px) {
+        width:10rem;
+        height:12rem;
     }
 }
 

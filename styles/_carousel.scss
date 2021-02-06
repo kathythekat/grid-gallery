@@ -23,6 +23,9 @@
     overflow: hidden;
     position: relative;
     width: 480px;
+    @media screen and (max-width:800px) {
+        width: 320px;
+    }
 
     &-images {
         display:flex;
@@ -47,6 +50,10 @@
         border-radius: 10px;
         height: 38rem;
         width: 480px;
+        @media screen and (max-width:800px) {
+            height:24rem;
+            width: 320px;
+        }
     }
 
     button {

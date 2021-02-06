@@ -14,12 +14,18 @@ squares.forEach(square => {
 
 const carouselModal = document.getElementById('carouselModal');
 
-
 function openCarousel(e) {
     const number = Array.prototype.findIndex.call(squares, (square) => square === e.target);
+    let width = 480;
 
-    let translateX = `-${(480*number)}px`;
-    let clickAxis = -480 * number;
+    const mediaLimit = window.matchMedia('(max-width:800px)');
+    if (mediaLimit.matches === true) {
+        width = 320;
+    }
+   
+    let translateX = `-${(width*number)}px`;
+   
+    let clickAxis = -width * number;
 
     carouselImages.style.transform = `translateX(${translateX})`
     carouselModal.classList.add("carousel-modal--open");
@@ -29,13 +35,13 @@ function openCarousel(e) {
         button.addEventListener('click', event => {
             if (event.target.id === 'previous') {
                 if(clickAxis !== 0) {
-                    clickAxis += 480;
+                    clickAxis += width;
                 } else {
-                    clickAxis = 480 - (480 * numOfImages);
+                    clickAxis = width - (width * numOfImages);
                 }
             } else {
-                if(clickAxis !== (-480 * (numOfImages - 1))) {
-                    clickAxis -= 480;
+                if(clickAxis !== (-width * (numOfImages - 1))) {
+                    clickAxis -= width;
                 } else {
                     clickAxis = 0;
                 }
@@ -49,14 +55,14 @@ function openCarousel(e) {
         document.addEventListener('keydown', e => {
             if (e.key === 'ArrowLeft') {
                 if(clickAxis !== 0) {
-                    clickAxis += 480;
+                    clickAxis += width;
                 } else {
-                    clickAxis = 480 - (480 * numOfImages);
+                    clickAxis = width - (width * numOfImages);
                 }
             } 
             if (e.key === 'ArrowRight') {
-                if(clickAxis !== (-480 * (numOfImages - 1))) {
-                    clickAxis -= 480;
+                if(clickAxis !== (-width * (numOfImages - 1))) {
+                    clickAxis -= width;
                 } else {
                     clickAxis = 0;
                 }
@@ -64,7 +70,6 @@ function openCarousel(e) {
             carouselImages.style.transform = `translateX(${clickAxis}px)`; 
         })
     }
-
 }
 
 //close carousel modal when clicking on modal
@@ -72,3 +77,4 @@ carouselModal.addEventListener('click', closeCarousel);
 function closeCarousel() {
     carouselModal.classList.remove('carousel-modal--open');
 }
+
