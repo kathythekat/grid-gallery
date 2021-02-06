@@ -21,11 +21,18 @@ body h1 {
 }
 
 .square {
-  border: solid black 1px;
   box-shadow: 4px 4px 4px #827c7c;
   border-radius: 10px;
-  width: 15rem;
+  width: 13rem;
   height: 16rem;
+}
+.square:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+.square:focus {
+  outline: none;
+  border: solid white 3px;
 }
 
 .carousel-modal {
@@ -73,8 +80,9 @@ body h1 {
   }
 }
 .carousel img {
-  border-radius: 8px;
-  height: 36rem;
+  border: solid white 2px;
+  border-radius: 10px;
+  height: 38rem;
   width: 480px;
 }
 .carousel button {

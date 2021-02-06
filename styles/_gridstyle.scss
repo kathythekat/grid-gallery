@@ -7,10 +7,17 @@
 }
 
 .square {
-    border: solid black 1px;
     box-shadow: 4px 4px 4px #827c7c;
     border-radius: 10px;
-    width: 15rem;
+    width: 13rem;
     height: 16rem;
+    &:hover {
+        cursor:pointer;
+        opacity:0.6;
+    }
+    &:focus {
+        outline: none;
+        border: solid white 3px;
+    }
 }
 
