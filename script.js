@@ -51,6 +51,15 @@ function openCarousel(e) {
         });
     })
 
+    //don't close modal if clicking on carousel image
+    const carouselImgClick = document.querySelectorAll('.carousel-images img');
+    carouselImgClick.forEach(image => {
+        image.addEventListener('click', event => {
+            event.stopPropagation();
+        })
+    });
+
+    //keydown event for next/prev to navigate images in carousel
     if (carouselModal.classList.contains('carousel-modal--open')) {
         document.addEventListener('keydown', e => {
             if (e.key === 'ArrowLeft') {
@@ -72,9 +81,11 @@ function openCarousel(e) {
     }
 }
 
+
 //close carousel modal when clicking on modal
 carouselModal.addEventListener('click', closeCarousel);
 function closeCarousel() {
     carouselModal.classList.remove('carousel-modal--open');
 }
+
 
