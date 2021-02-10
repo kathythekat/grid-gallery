@@ -107,23 +107,18 @@ body h1 {
   }
 }
 .carousel button {
-  background-color: #2a2a2a96;
-  font-size: 24px;
-  border-radius: 50%;
-  border: 0;
+  fill: white;
   cursor: pointer;
-  height: 2.5rem;
-  width: 2.5rem;
-  color: white;
   position: absolute;
-  /* transition: opacity .25s; */
-  z-index: 1;
+  background: none;
+  border: none;
+  z-index: 10;
 }
 .carousel button.previous {
-  left: 4px;
+  left: 0px;
 }
 .carousel button.next {
-  right: 4px;
+  right: 0px;
 }
 .carousel button:hover {
   opacity: 0.6;
