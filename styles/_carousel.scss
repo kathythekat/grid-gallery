@@ -23,26 +23,16 @@
     overflow: hidden;
     position: relative;
     width: 480px;
-    @media screen and (max-width:800px) {
+    @media screen and (max-width:850px) {
         width: 320px;
+    }
+    @media (orientation:landscape) and (max-width:850px){
+        height:20rem;
+        width:280px;
     }
 
     &-images {
         display:flex;
-    }
-
-    .animate {
-        animation: fade-in 1s;
-    }
-
-    @keyframes fade-in {
-        0% {
-            opacity: 0;
-        }
-
-        100% {
-            opacity: 1;
-        }
     }
 
     img {
@@ -50,9 +40,24 @@
         border-radius: 10px;
         height: 38rem;
         width: 480px;
-        @media screen and (max-width:800px) {
+        animation: fade-in ease-in-out 250ms;
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+    
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @media screen and (max-width:850px) {
             height:24rem;
             width: 320px;
+        }
+        @media (orientation:landscape) and (max-width:850px){
+            height:20rem;
+            width:280px;
         }
     }
 
@@ -73,6 +78,9 @@
         }
         &:hover {
             opacity: 0.6;
+        }
+        &:focus {
+            outline:none;
         }
     }
 }

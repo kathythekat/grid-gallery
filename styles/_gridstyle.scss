@@ -1,11 +1,17 @@
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3,auto);
+    grid-template-columns: repeat(4,auto);
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    @media screen and (max-width:800px) {
+    @media screen and (max-width:850px) {
         grid-template-columns: repeat(2,auto);
+    }
+    @media screen and (min-width:600px) and (max-width:850px) {
+        grid-template-columns: repeat(3,auto);
+    }
+    @media screen and (max-width:1024px) and (orientation:landscape) {
+        grid-template-columns: repeat(3,auto);
     }
 }
 

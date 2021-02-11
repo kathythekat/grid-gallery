@@ -16,18 +16,22 @@ const carouselModal = document.getElementById('carouselModal');
 
 function openCarousel(e) {
     const number = Array.prototype.findIndex.call(squares, (square) => square === e.target);
-    let width = 480;
+    let width = 480; //width matches width in px from css
 
-    const mediaLimit = window.matchMedia('(max-width:800px)');
+    const mediaLimit = window.matchMedia('(max-width:850px)');
+    const mediaLandscape = window.matchMedia('(orientation:landscape)');
     if (mediaLimit.matches === true) {
         width = 320;
     }
+    if (mediaLandscape.matches === true && mediaLimit.matches === true) {
+        width = 280;
+    }
    
-    let translateX = `-${(width*number)}px`;
+    /* let translateX = `-${(width*number)}px`; */
+     /* carouselImages.style.transform = `translateX(${translateX})` */
    
     let clickAxis = -width * number;
-
-    carouselImages.style.transform = `translateX(${translateX})`
+    carouselImages.style.transform = `translateX(${clickAxis}px)`
     carouselModal.classList.add("carousel-modal--open");
 
     //event listener for clicking carousel buttons
@@ -49,13 +53,14 @@ function openCarousel(e) {
             carouselImages.style.transform = `translateX(${clickAxis}px)`;
             event.stopPropagation();
         });
+        
     })
 
     //don't close modal if clicking on carousel image
     const carouselImgClick = document.querySelectorAll('.carousel-images img');
     carouselImgClick.forEach(image => {
         image.addEventListener('click', event => {
-            event.stopPropagation();
+            event.stopImmediatePropagation();
         })
     });
 

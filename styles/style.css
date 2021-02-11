@@ -14,14 +14,24 @@ body h1 {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(4, auto);
   justify-content: center;
   align-items: center;
   gap: 1rem;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
   .grid-container {
     grid-template-columns: repeat(2, auto);
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 850px) {
+  .grid-container {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  .grid-container {
+    grid-template-columns: repeat(3, auto);
   }
 }
 
@@ -75,16 +85,26 @@ body h1 {
   position: relative;
   width: 480px;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
   .carousel {
     width: 320px;
+  }
+}
+@media (orientation: landscape) and (max-width: 850px) {
+  .carousel {
+    height: 20rem;
+    width: 280px;
   }
 }
 .carousel-images {
   display: flex;
 }
-.carousel .animate {
-  animation: fade-in 1s;
+.carousel img {
+  border: solid white 2px;
+  border-radius: 10px;
+  height: 38rem;
+  width: 480px;
+  animation: fade-in ease-in-out 250ms;
 }
 @keyframes fade-in {
   0% {
@@ -94,16 +114,16 @@ body h1 {
     opacity: 1;
   }
 }
-.carousel img {
-  border: solid white 2px;
-  border-radius: 10px;
-  height: 38rem;
-  width: 480px;
-}
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
   .carousel img {
     height: 24rem;
     width: 320px;
+  }
+}
+@media (orientation: landscape) and (max-width: 850px) {
+  .carousel img {
+    height: 20rem;
+    width: 280px;
   }
 }
 .carousel button {
@@ -122,6 +142,9 @@ body h1 {
 }
 .carousel button:hover {
   opacity: 0.6;
+}
+.carousel button:focus {
+  outline: none;
 }
 
 /*# sourceMappingURL=style.css.map */
